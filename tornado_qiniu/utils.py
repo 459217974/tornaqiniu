@@ -93,8 +93,6 @@ def send_sync_request(url, headers=None, method="GET", body=None):
     except Exception as e:
         print("Error:" + str(e))
         raise Exception
-    finally:
-        http_client.close()
 
 
 def mkdir_recursive(dirname, level=1):
