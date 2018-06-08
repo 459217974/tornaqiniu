@@ -973,7 +973,7 @@ class Resource(object):
 		batch.multi_delete()
 		response=yield batch.execute()
 		if response:
-			return json_decode(resposne)
+			return json_decode(response)
 	@gen.coroutine
 	def list(self, limit=1000, prefix="", delimiter="", marker=""):
 		response=yield self.__bucket.list(self.__bucket.bucket_name, limit, prefix, delimiter, marker)
