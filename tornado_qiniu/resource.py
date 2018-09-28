@@ -34,7 +34,7 @@ class QiniuResourceLoader(object):
 
     def _gen_private_url(self, key, host, expires=3600):
         assert host != None and host != "", "download host can' be empty"
-        if not host.startswith("http://"):
+        if not host.startswith("http://") and not host.startswith("https://"):
             host = "http://" + host
         download_url = host + '/' + key
         token = self._auth.download_token(download_url, expires=expires)
